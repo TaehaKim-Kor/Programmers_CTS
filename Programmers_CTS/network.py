@@ -4,7 +4,7 @@ def netsearcher(net,link,visit,ll,current):
     link.append(current)
     flag = 0
     for i in range(len(net[current])):
-        if visit[i] == 0 and net[current][i] == 1 and i != current:
+        if visit[i] == 0 and net[current][i] == 1:
             flag = 1
             netsearcher(net,link,visit,ll,i)
     if flag == 0:
