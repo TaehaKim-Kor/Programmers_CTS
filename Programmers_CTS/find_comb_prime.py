@@ -1,3 +1,4 @@
+#https://programmers.co.kr/learn/courses/30/lessons/12977?language=python3
 def primenum_classifier(tgt):
     if tgt == 1:
         return True
@@ -7,37 +8,46 @@ def primenum_classifier(tgt):
                 return False
     return True
 
-def dwsearcher(numlist, visit, trial, tgt, anslist):
-    if trial == 3:
+def trial_counter(visit):
+    return sum(visit)
+
+def tgt_adder(numlist, visit):
+    tgt = 0
+    for i in range(len(visit)):
+        if visit[i] == 1:
+            tgt += numlist[i]
+    return tgt
+
+def refiner(tgtlist):
+    refine_anslist = []
+    for i in range(len(tgtlist)):
+        try:
+            refine_anslist.index(tgtlist[i])
+        except:
+            refine_anslist.append(tgtlist[i])
+    return refine_anslist
+    
+def dwsearcher(numlist, visit, anslist, current_position):
+    visit[current_position] = 1
+    trial = trial_counter(visit)
+    if trial < 3:
+        for j in range(len(numlist)):
+            if visit[j] == 0:
+                dwsearcher(numlist,visit,anslist,j)  
+    elif trial == 3:
+        tgt = tgt_adder(numlist, visit)
         if primenum_classifier(tgt):
             ans = []
             for j in range(len(visit)):
                 if visit[j] == 1:
-                    ans.append(visit[j])
+                    ans.append(numlist[j])
             anslist.append(ans)
-    else:
-        for i in range(len(numlist)):
-            if visit[i] == 0:
-                print(visit)
-                tgt += numlist[i]
-                visit[i] = 1
-                trial += 1
-                dwsearcher(numlist,visit,trial,tgt,anslist)        
-            
+                
 def findcomb(nums):
     answer_list = []
-    visit_list = [0 for i in range(len(nums))]
     for i in range(len(nums)):
-        current_trial = 1
-        target = nums[i]
-        visit_list[i] = 1
-        dwsearcher(nums,visit_list,current_trial,target,answer_list)
-    refine_anslist = []
-    answer_list.sort()
-    for i in range(len(answer_list)):
-        try:
-            refine_anslist.index(answer_list[i])
-        except:
-            refine_anslist.append(answer_list[i])
-    answer = len(refine_anslist)
+        visit_list = [0 for i in range(len(nums))]
+        dwsearcher(nums,visit_list,answer_list,i)
+    answer_list = refiner(answer_list)
+    answer = len(answer_list)
     return answer

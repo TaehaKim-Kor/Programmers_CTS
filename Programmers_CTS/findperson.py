@@ -1,3 +1,4 @@
+#https://programmers.co.kr/learn/courses/30/lessons/42862
 def findperson(n, lost, reserve):
     list = [0 for x in range(n+2)]
     myerror = 0
@@ -18,4 +19,3 @@ def findperson(n, lost, reserve):
                 myerror +=1
     answer = n - myerror
     return answer
-#https://programmers.co.kr/learn/courses/30/lessons/42862
