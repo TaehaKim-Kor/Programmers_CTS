@@ -9,4 +9,4 @@ import rotating as rt
 # print(fcp.findcomb([1,2,7,6,4]))
 # print(nl.netlink(3,[[1,1,0],[1,1,0],[0,0,1]]))
 print(rt.map_rotating(6,6,[[2,2,5,4],[3,3,6,6],[5,1,6,3]]))
-#print(rt.map_rotating(100,97,[[1,1,100,97]]))
+# print(rt.map_rotating(100,97,[[1,1,100,97]]))
