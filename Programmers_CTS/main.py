@@ -3,6 +3,7 @@ import find_comb_prime as fcp
 import network as nl
 import rotating as rt
 import pair_remove as pr
+import perfect_rectangle as pr2
 #fp.findperson(5,[2,4],[1,3,5])
 #fcp.findcomb([1,2,3,4])
 #fcp.findcomb([1,2,7,6,4])
@@ -18,3 +19,5 @@ print(pr.solution("abcccba"))
 print(pr.solution("abccccbaaa"))
 print(pr.solution("abccaabaa"))
 print(pr.solution("a"))
+
+print(pr2.solution(8,12))
