@@ -5,6 +5,7 @@ import rotating as rt
 import pair_remove as pr
 import perfect_rectangle as pr2
 import nvweb as nv
+import kakao_dart as kd
 # fp.findperson(5,[2,4],[1,3,5])
 # fcp.findcomb([1,2,3,4])
 # fcp.findcomb([1,2,7,6,4])
@@ -20,7 +21,8 @@ import nvweb as nv
 # print(pr.solution("abccccbaaa"))
 # print(pr.solution("abccaabaa"))
 # print(pr.solution("a"))
-print(nv.solution0([[1,4],[3,4],[3,10]]))
-print(nv.solution0([[1,1],[2,2],[1,2]]))
-print(nv.solution0([[1,3],[7,9],[1,9]]))
+# print(nv.solution0([[1,4],[3,4],[3,10]]))
+# print(nv.solution0([[1,1],[2,2],[1,2]]))
+# print(nv.solution0([[1,3],[7,9],[1,9]]))
+print(kd.solution("1S*2T*3S"))
 # print(pr2.solution(8,12))
